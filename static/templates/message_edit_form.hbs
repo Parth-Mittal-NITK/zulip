@@ -30,7 +30,7 @@
                     </label>
                 </div>
             </div>
-            <select class='message_edit_topic_propagate' style='display:none;'>
+            <select class='message_edit_topic_propagate' {{#if is_content_editable}}style='display:none;'{{/if}}>
                 <option selected="selected" value="change_later"> {{t "Change later messages to this topic" }}</option>
                 <option value="change_one"> {{t "Change only this message topic" }}</option>
                 <option value="change_all"> {{t "Change previous and following messages to this topic" }}</option>

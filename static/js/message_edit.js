@@ -570,8 +570,11 @@ function edit_message(row, raw_content) {
             : null;
         const is_topic_edited = new_topic !== original_topic && new_topic !== "";
         const is_stream_edited = is_stream_editable ? new_stream_id !== original_stream_id : false;
-        message_edit_topic_propagate.toggle(is_topic_edited || is_stream_edited);
         message_edit_breadcrumb_messages.toggle(is_stream_edited);
+       
+        if (editability === editability_types.FULL) {
+            message_edit_topic_propagate.toggle(is_topic_edited || is_stream_edited);
+        }
 
         if (is_stream_edited) {
             /* Reinitialize the typeahead component with content for the new stream. */
